@@ -17,7 +17,7 @@
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
-        android:textColor="#c6ddf4"
+        android:textColor="#ffffff"
         android:textColorHint="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,8 +33,9 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textColor="#c6ddf4"
+        android:textColor="#ffffff"
         android:textColorHint="@android:color/white"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvErrUser" />
 
@@ -47,8 +48,9 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
-        android:textColor="#c6ddf4"
+        android:textColor="#ffffff"
         android:textColorHint="@android:color/white"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvErrPass" />
 
@@ -61,8 +63,9 @@
         android:ems="10"
         android:hint="dd-MM-yyyy"
         android:inputType="textPersonName"
-        android:textColor="#c6ddf4"
+        android:textColor="#ffffff"
         android:textColorHint="@android:color/white"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tvDOB"
         app:layout_constraintTop_toBottomOf="@+id/tvErrEmail" />
 
@@ -87,6 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="DOB:"
+        android:textStyle="bold"
         android:textColor="#ffffff"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/etDate"
@@ -110,7 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Invalid Username"
+        android:text="Username must be between 3 and 15 characters."
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
         android:visibility="invisible"
@@ -123,7 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Invalid Password"
+        android:text="Password must be between 3 and 15 characters."
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
         android:visibility="invisible"
