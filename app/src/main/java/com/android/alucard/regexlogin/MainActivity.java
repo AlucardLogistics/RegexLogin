@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.regex.Pattern;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     public static final Pattern PASSWORD = Pattern.compile("^[a-z0-9._\\\\s-]{3,15}$");
 
     EditText etUser, etPass, etEmail, etDate;
+    TextView tvErrUser, tvErrPass, tvErrEmail, tvErrDate;
     Button btSubmit;
 
     @Override
@@ -40,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
         etPass = findViewById(R.id.etPass);
         etEmail = findViewById(R.id.etEmail);
         etDate = findViewById(R.id.etDate);
+
+        tvErrUser = findViewById(R.id.tvErrUser);
+        tvErrPass = findViewById(R.id.tvErrPass);
+        tvErrEmail = findViewById(R.id.tvErrEmail);
+        tvErrDate = findViewById(R.id.tvErrDate);
 
         btSubmit = findViewById(R.id.btSubmit);
 
@@ -87,32 +94,46 @@ public class MainActivity extends AppCompatActivity {
     private boolean checkEmail(String email) {
         if(!EMAIL_ADDRESS_PATTERN.matcher(email).matches()){
             Toast.makeText(this, "Email is invalid", Toast.LENGTH_SHORT).show();
+            tvErrEmail.setVisibility(View.VISIBLE);
             return false;
-        } else
-        return true;
+        } else {
+            tvErrEmail.setVisibility(View.INVISIBLE);
+            return true;
+        }
+
     }
 
     private boolean checkDate(String date) {
         if(!VALIDATE.matcher(date).matches()) {
             Toast.makeText(this, "Date is invalid", Toast.LENGTH_SHORT).show();
+            tvErrDate.setVisibility(View.VISIBLE);
             return false;
-        } else
-        return true;
+        } else {
+            tvErrDate.setVisibility(View.INVISIBLE);
+            return true;
+        }
+
     }
 
     private boolean checkUser(String user) {
         if(!USERNAME.matcher(user).matches()) {
             Toast.makeText(this, "User is invalid", Toast.LENGTH_SHORT).show();
+            tvErrUser.setVisibility(View.VISIBLE);
             return false;
-        } else
+        } else {
+            tvErrUser.setVisibility(View.INVISIBLE);
             return true;
+        }
     }
 
     private boolean checkPass(String pass) {
         if(!PASSWORD.matcher(pass).matches()) {
             Toast.makeText(this, "Password is invalid", Toast.LENGTH_SHORT).show();
+            tvErrPass.setVisibility(View.VISIBLE);
             return false;
-        } else
+        } else {
+            tvErrPass.setVisibility(View.INVISIBLE);
             return true;
+        }
     }
 }
